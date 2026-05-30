@@ -1,7 +1,8 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logoUni from '../../assets/logo_Uni.png';
+// import logoUni from "../../assets/logo_Uni.png";
+const logoUni = "/images/stock/logo-web.png";
 import { mainNavigation } from '../../data/siteContent';
 
 function Header() {

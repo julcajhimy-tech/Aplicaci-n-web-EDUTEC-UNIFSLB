@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Campus Universitario",
+    "category": "Instalaciones",
+    "description": "Una vista del campus universitario.",
+    "image": "/images/stock/Campus_Universitario.jpg"
+  },
+  {
+    "title": "Concurso de Baile Tradicional",
+    "category": "Eventos",
+    "description": "Estudiantes participando en el concurso de baile.",
+    "image": "/images/stock/Concurso_baile tradicional.jpg"
+  },
+  {
+    "title": "Día de Presentación",
+    "category": "Proyectos",
+    "description": "Jornada de presentación de proyectos académicos.",
+    "image": "/images/stock/Dia_de_presentación.jpg"
+  },
+  {
+    "title": "Ensayo Nungkui",
+    "category": "Cultura",
+    "description": "Ensayo de una presentación cultural Nungkui.",
+    "image": "/images/stock/Esayo_Nungkui.jpg"
+  },
+  {
+    "title": "Mi Espacio de Trabajo",
+    "category": "Talleres",
+    "description": "Un vistazo al espacio de trabajo de los estudiantes.",
+    "image": "/images/stock/Mi_espacio_de_tranajo.jpg"
+  },
+  {
+    "title": "Visita a Tutumberos",
+    "category": "Visitas",
+    "description": "Visita educativa a la comunidad de Tutumberos.",
+    "image": "/images/stock/Visita_Tutumberos.jpg"
+  },
+  {
+    "title": "Laboratorio",
+    "category": "Instalaciones",
+    "description": "Estudiantes trabajando en el laboratorio de cómputo.",
+    "image": "/images/stock/laboratotio.jpg"
+  }
+]

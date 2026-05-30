@@ -30,9 +30,52 @@ Este archivo documenta las decisiones, cambios y mejoras implementadas en el sit
     - Se actualizó la etiqueta "Diccio" a "Diccionario Digital" para mostrar el nombre completo.
 - **Sección "Líneas de Valor":** Se actualizó la imagen de la sección, corrigiendo un error en la ruta de importación del archivo.
 
-### 4. Gestión del Repositorio
-- Se corrigió un error de inicialización de Git que estaba apuntando a la raíz del disco `D:\` en lugar de la carpeta del proyecto `D:\Edutec_Web`, evitando así la inclusión de archivos personales en el repositorio.
+### 4. Gestión del Repositorio y Despliegue
+- **Corrección de Repositorio Git:** Se solucionó un error crítico donde Git estaba inicializado en la raíz del disco `D:\`. Se eliminó la configuración incorrecta y se reinicializó el repositorio correctamente dentro de la carpeta del proyecto `D:\Edutec_Web`.
+- **Subida a GitHub:** Se conectó el repositorio local a un nuevo repositorio en GitHub y se subió todo el código fuente. Se resolvieron problemas de permisos de usuario durante el proceso.
+- **Despliegue con Vercel:** Se creó una cuenta en Vercel, se conectó al repositorio de GitHub y se desplegó el sitio web, estableciendo un flujo de despliegue continuo.
 
-## Próximos Pasos
-- Continuar con el proceso de subir los cambios a GitHub.
-- Desplegar la aplicación para visualizar los avances en un entorno real.
+## ¡Proyecto Desplegado!
+
+El sitio web ahora está en línea y se actualizará automáticamente con cada `push` a la rama `main` en GitHub.
+
+### 5. Refactorización de Datos y Experiencia de Usuario
+- **Carga Diferida (Lazy Loading):** Se implementó `React.lazy` y `Suspense` en el enrutador principal (`App.jsx`) para que el código de cada página se cargue solo cuando es necesario, mejorando significativamente el tiempo de carga inicial.
+- **Migración a JSON:** Se movieron todos los datos estáticos (ciclos, proyectos, portafolios, galería) desde un archivo JavaScript (`siteContent.js`) a archivos JSON dedicados en la carpeta `public/data`. Esto desacopla el contenido del código y facilita futuras actualizaciones.
+- **Carga Dinámica de Datos:** Se refactorizó `HomePage.jsx` para cargar los datos desde los archivos JSON de forma asíncrona usando `fetch`.
+- **Mejora de Responsividad:** Se corrigió el diseño de la sección de proyectos (`ProjectsSection.jsx`) para que se visualice correctamente en dispositivos móviles, solucionando un problema de desbordamiento.
+- **Estados de Carga (Skeletons):** Se implementó una interfaz de esqueleto en todas las secciones que cargan datos dinámicamente (`CyclesSection`, `GroupPortfoliosSection`, `ProjectsSection`, `GallerySection`). Ahora, en lugar de un espacio en blanco, el usuario ve una animación de carga, mejorando la experiencia de usuario.
+- **Corrección de Errores Críticos:**
+    - Se solucionó un error de pantalla en blanco causado por `ProjectsSection.jsx` al intentar acceder a propiedades de datos que ya no existían después de la migración a JSON.
+    - Se depuraron y corrigieron problemas con las rutas de los archivos JSON en las peticiones `fetch`, asegurando que los datos se carguen correctamente.
+
+## Tareas Pendientes
+
+- **Poblar la carpeta de imágenes:** Las imágenes del proyecto deben ser renombradas y movidas a la carpeta `public/images/stock/` para que coincidan con las rutas especificadas en los archivos JSON. Los nombres de archivo requeridos son:
+    - **Proyectos:**
+        - `project-01.jpg`
+        - `project-02.jpg`
+        - `project-03.jpg`
+        - `project-04.jpg`
+        - `project-05.jpg`
+        - `project-06.jpg`
+        - `project-07.jpg`
+        - `project-08.jpg`
+    - **Portafolios:**
+        - `team-01.jpg`
+        - `team-02.jpg`
+        - `team-03.jpg`
+    - **Galería:**
+        - `gallery-01.jpg`
+        - `gallery-02.jpg`
+        - `gallery-03.jpg`
+        - `gallery-04.jpg`
+        - `gallery-05.jpg`
+        - `gallery-06.jpg`
+        - `gallery-07.jpg`
+        - `gallery-08.jpg`
+
+### 6. Actualización de Contenido y Enlaces
+- **Sección "Eduteca":** Se actualizó la tarjeta "Recursos Pedagógicos" para convertirla en "Tecnoteca Intercultural", asignándole el enlace `https://grupo5block.my.canva.site/tecnotecaintercultural` y una descripción más específica.
+- **Sección "Proyectos que marcan la diferencia":** Se actualizaron los primeros cuatro proyectos con enlaces y descripciones reales proporcionados por el usuario.
+- **Limpieza de Código:** Se eliminó código innecesario y comentarios de los componentes `GroupPortfoliosSection.jsx` y `GallerySection.jsx`.

@@ -1,8 +1,9 @@
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import logoUni from '../../assets/logo_Uni.png';
-import heroVideo from '../../assets/Video_portada.mp4';
+// import logoUni from '../../assets/logo_Uni.png';
+const logoUni = '/images/stock/logo-web.png';
+const heroVideo = "/images/stock/Video_portada.mp4";
 import CpuAnimation from '../ui/CpuAnimation';
 import { homeHero } from '../../data/siteContent';function HeroSection() {
   const videoRef = useRef(null);

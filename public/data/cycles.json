@@ -1,0 +1,34 @@
+[
+  {
+    "id": "iii",
+    "title": "III Ciclo",
+    "subtitle": "Fundamentos de Programacion",
+    "description": "Introducción a la lógica de programación y a las tecnologías web esenciales como HTML, CSS y JavaScript.",
+    "icon": "BookOpen",
+    "status": "Disponible para ampliacion"
+  },
+  {
+    "id": "iv",
+    "title": "IV Ciclo",
+    "subtitle": "Desarrollo Frontend",
+    "description": "Especialización en la creación de interfaces de usuario interactivas y dinámicas con la librería React.",
+    "icon": "Globe",
+    "status": "Disponible para ampliacion"
+  },
+  {
+    "id": "v",
+    "title": "V Ciclo",
+    "subtitle": "Desarrollo Backend",
+    "description": "Construcción de la lógica del servidor, bases de datos y APIs para potenciar aplicaciones web completas.",
+    "icon": "BrainCircuit",
+    "status": "Disponible para ampliacion"
+  },
+  {
+    "id": "vi",
+    "title": "VI Ciclo",
+    "subtitle": "Tecnologías Emergentes",
+    "description": "Exploración de campos avanzados como la inteligencia artificial, machine learning y desarrollo móvil.",
+    "icon": "Network",
+    "status": "Disponible para ampliacion"
+  }
+]

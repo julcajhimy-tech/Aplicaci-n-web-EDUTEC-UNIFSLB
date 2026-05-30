@@ -1,0 +1,23 @@
+[
+  {
+    "id": "01",
+    "title": "Equipo Alfa",
+    "description": "Un equipo enfocado en soluciones de e-commerce y aplicaciones web interactivas.",
+    "image": "/images/stock/team-01.jpg",
+    "url": "#"
+  },
+  {
+    "id": "02",
+    "title": "Equipo Beta",
+    "description": "Especialistas en el desarrollo de plataformas de gestión de datos y análisis.",
+    "image": "/images/stock/team-02.jpg",
+    "url": "#"
+  },
+  {
+    "id": "03",
+    "title": "Equipo Gamma",
+    "description": "Innovadores en el campo de las aplicaciones móviles y las tecnologías emergentes.",
+    "image": "/images/stock/team-03.jpg",
+    "url": "#"
+  }
+]

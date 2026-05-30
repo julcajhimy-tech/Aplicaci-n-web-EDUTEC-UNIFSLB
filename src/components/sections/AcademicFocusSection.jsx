@@ -1,6 +1,6 @@
 import { academicHighlights } from '../../data/siteContent';
 import SectionHeading from '../ui/SectionHeading';
-import lineasDeValorImage from '../../assets/Lineas_de_valor.jpeg';
+const lineasDeValorImage = "/images/stock/Lineas_de_valor.png";
 
 function AcademicFocusSection() {
   return (

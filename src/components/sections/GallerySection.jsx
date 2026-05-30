@@ -1,11 +1,15 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import SectionHeading from '../ui/SectionHeading';
 
-function GallerySection({ items }) {
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+function GallerySection({ items, isLoading }) {
   const [activeCategory, setActiveCategory] = useState('Todas');
-  const [visibleCount, setVisibleCount] = useState(8);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const categories = useMemo(
     () => ['Todas', ...new Set(items.map((item) => item.category))],
@@ -16,35 +20,45 @@ function GallerySection({ items }) {
     if (activeCategory === 'Todas') {
       return items;
     }
-
     return items.filter((item) => item.category === activeCategory);
   }, [activeCategory, items]);
 
-  const visibleItems = filteredItems.slice(0, visibleCount);
-  const selectedItem = selectedIndex === null ? null : filteredItems[selectedIndex];
-
-  const openLightbox = (itemIndex) => setSelectedIndex(itemIndex);
-  const closeLightbox = () => setSelectedIndex(null);
+  const openLightbox = (item) => setSelectedItem(item);
+  const closeLightbox = () => setSelectedItem(null);
 
   const showPrevious = () => {
-    setSelectedIndex((current) => {
-      if (current === null) {
-        return current;
-      }
-
-      return current === 0 ? filteredItems.length - 1 : current - 1;
-    });
+    if (!selectedItem) return;
+    const currentIndex = filteredItems.findIndex((item) => item.image === selectedItem.image);
+    const newIndex = currentIndex === 0 ? filteredItems.length - 1 : currentIndex - 1;
+    setSelectedItem(filteredItems[newIndex]);
   };
 
   const showNext = () => {
-    setSelectedIndex((current) => {
-      if (current === null) {
-        return current;
-      }
-
-      return current === filteredItems.length - 1 ? 0 : current + 1;
-    });
+    if (!selectedItem) return;
+    const currentIndex = filteredItems.findIndex((item) => item.image === selectedItem.image);
+    const newIndex = currentIndex === filteredItems.length - 1 ? 0 : currentIndex + 1;
+    setSelectedItem(filteredItems[newIndex]);
   };
+
+  if (isLoading) {
+    return (
+      <section id="galeria" className="section section-muted">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Vida academica"
+            title="Galeria de actividades"
+            centered
+          />
+          <div className="gallery-toolbar">
+            {[...Array(4)].map((_, index) => (
+              <div key={index} className="h-9 w-24 rounded-md bg-gray-300" />
+            ))}
+          </div>
+          <div className="h-48 w-full bg-gray-300 rounded-lg mt-8" />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="galeria" className="section section-muted">
@@ -52,7 +66,6 @@ function GallerySection({ items }) {
         <SectionHeading
           eyebrow="Vida academica"
           title="Galeria de actividades"
-          description="Nueva galeria pensada para escalar mas alla de 10 imagenes, con filtros, carga progresiva y vista ampliada para fotos de eventos y proyectos."
           centered
         />
 
@@ -62,44 +75,41 @@ function GallerySection({ items }) {
               key={category}
               type="button"
               className={`gallery-filter ${activeCategory === category ? 'is-active' : ''}`}
-              onClick={() => {
-                setActiveCategory(category);
-                setVisibleCount(8);
-              }}
+              onClick={() => setActiveCategory(category)}
             >
               {category}
             </button>
           ))}
         </div>
 
-        <div className="gallery-masonry">
-          {visibleItems.map((item, index) => (
-            <button
-              key={`${item.title}-${item.image}`}
-              type="button"
-              className="gallery-tile"
-              onClick={() => openLightbox(index)}
-            >
-              <img src={item.image} alt={item.title} />
-              <div className="gallery-overlay">
-                <span>{item.category}</span>
-                <p>{item.title}</p>
-              </div>
-            </button>
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={24}
+          slidesPerView={1.5}
+          breakpoints={{
+            640: { slidesPerView: 2.5 },
+            1024: { slidesPerView: 3.5 },
+            1280: { slidesPerView: 4.5 },
+          }}
+          className="gallery-carousel mt-8"
+        >
+          {filteredItems.map((item) => (
+            <SwiperSlide key={`${item.title}-${item.image}`}>
+              <button
+                type="button"
+                className="gallery-tile"
+                onClick={() => openLightbox(item)}
+              >
+                <img src={item.image} alt={item.title} />
+                <div className="gallery-overlay">
+                  <span>{item.category}</span>
+                  <p>{item.title}</p>
+                </div>
+              </button>
+            </SwiperSlide>
           ))}
-        </div>
-
-        {visibleCount < filteredItems.length ? (
-          <div className="gallery-actions">
-            <button
-              type="button"
-              className="button button-outline"
-              onClick={() => setVisibleCount((count) => count + 4)}
-            >
-              Ver mas imagenes
-            </button>
-          </div>
-        ) : null}
+        </Swiper>
       </div>
 
       {selectedItem ? (

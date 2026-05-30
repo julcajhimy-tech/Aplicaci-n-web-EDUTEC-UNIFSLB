@@ -1,0 +1,74 @@
+[
+  {
+    "id": "01",
+    "cycleId": "iii",
+    "title": "Diccionario Awajún-Wampis",
+    "description": "Una herramienta digital para la preservación y difusión de las lenguas originarias.",
+    "image": "/images/stock/diccionario_awajun_wampis.png",
+    "url": "https://julcajhimy-tech.github.io/diccionario-awajun-wampis/",
+    "category": "Proyectos Destacados"
+  },
+  {
+    "id": "02",
+    "cycleId": "iii",
+    "title": "Ponencia: Diccionario Digital",
+    "description": "Presentación del proyecto del diccionario digital, explicando su impacto y tecnología.",
+    "image": "/images/stock/ponecia.png",
+    "url": "https://jhonsonedutec-glitch.github.io/Ponencia-Dicionario/",
+    "category": "Ponencias"
+  },
+  {
+    "id": "03",
+    "cycleId": "iv",
+    "title": "Aprendemos Jugando",
+    "description": "Una aplicación lúdica para el aprendizaje, combinando educación y entretenimiento.",
+    "image": "/images/stock/Aprendo_jugando.png",
+    "url": "https://julcajhimy-tech.github.io/juego-matematicas/",
+    "category": "Juegos"
+  },
+  {
+    "id": "04",
+    "cycleId": "iv",
+    "title": "Charla Vocacional 2026",
+    "description": "Presentación interactiva sobre orientación vocacional en el campo de la tecnología educativa.",
+    "image": "/images/stock/charla_vocacional.png",
+    "url": "https://gildemisterjulca.github.io/Charla-vocacional-2026/",
+    "category": "Ponencias"
+  },
+  {
+    "id": "05",
+    "cycleId": "v",
+    "title": "Red Social para Viajeros",
+    "description": "Conecta con otros viajeros, comparte tus aventuras y planifica tu próximo viaje.",
+    "image": "/images/stock/project-05.jpg",
+    "url": "#",
+    "category": "Proyectos Destacados"
+  },
+  {
+    "id": "06",
+    "cycleId": "v",
+    "title": "Sistema de Gestión de Contenidos",
+    "description": "Un CMS personalizado para administrar contenido de sitios web de forma dinámica y eficiente.",
+    "image": "/images/stock/project-06.jpg",
+    "url": "#",
+    "category": "Proyectos Destacados"
+  },
+  {
+    "id": "07",
+    "cycleId": "vi",
+    "title": "App de Realidad Aumentada",
+    "description": "Experimenta la superposición de información digital en el mundo real a través de tu dispositivo móvil.",
+    "image": "/images/stock/project-07.jpg",
+    "url": "#",
+    "category": "Proyectos Destacados"
+  },
+  {
+    "id": "08",
+    "cycleId": "vi",
+    "title": "Plataforma de Análisis de Datos",
+    "description": "Visualiza y analiza grandes conjuntos de datos para la toma de decisiones estratégicas.",
+    "image": "/images/stock/project-08.jpg",
+    "url": "#",
+    "category": "Proyectos Destacados"
+  }
+]
