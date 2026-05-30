@@ -32,6 +32,28 @@ npm run build
 npm run preview
 ```
 
+## Actualización del Despliegue
+
+Para actualizar la versión desplegada en Vercel, simplemente sigue el flujo estándar de Git para subir tus cambios a la rama `main`. Vercel detectará automáticamente el `push` y iniciará un nuevo despliegue.
+
+1.  **Añadir cambios al área de preparación:**
+
+    ```bash
+    git add .
+    ```
+
+2.  **Crear un commit con un mensaje descriptivo:**
+
+    ```bash
+    git commit -m "Describe aquí los cambios realizados"
+    ```
+
+3.  **Subir los cambios a GitHub:**
+
+    ```bash
+    git push origin main
+    ```
+
 ## Estructura del proyecto
 
 ```text
