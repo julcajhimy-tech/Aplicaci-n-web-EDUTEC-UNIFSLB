@@ -1,10 +1,10 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import { projects } from '../data/siteContent';
+import { academicHighlights } from '../data/siteContent';
 
 function ProjectPage() {
   const { projectSlug } = useParams();
-  const project = projects.find((item) => item.slug === projectSlug);
+  const project = academicHighlights.find((item) => item.slug === projectSlug);
 
   if (!project) {
     return (
