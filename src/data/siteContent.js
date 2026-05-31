@@ -76,3 +76,10 @@ export const contactInformation = [
     value: 'educaciontecnologica@unibagua.edu.pe',
   },
 ];
+
+// Placeholder data to fix build errors
+export const cycles = [];
+
+export const getProjectsByCycleId = (cycleId) => {
+  return [];
+};
