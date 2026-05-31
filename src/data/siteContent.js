@@ -78,8 +78,28 @@ export const contactInformation = [
 ];
 
 // Placeholder data to fix build errors
-export const cycles = [];
+export const cycles = [
+  {
+    id: 'ciclo-1',
+    icon: Rocket,
+    title: 'Ciclo de Ejemplo',
+    headline: 'Construyendo el Futuro',
+    description: 'Este es un ciclo de ejemplo para asegurar que la compilación funcione.',
+    focusAreas: ['Desarrollo Web', 'Bases de Datos', 'UI/UX'],
+    outcomes: ['Proyectos funcionales', 'Experiencia práctica'],
+  },
+];
 
 export const getProjectsByCycleId = (cycleId) => {
+  if (cycleId === 'ciclo-1') {
+    return [
+      {
+        slug: 'proyecto-ejemplo',
+        category: 'Web',
+        title: 'Proyecto de Ejemplo',
+        description: 'Una descripción para el proyecto de ejemplo.',
+      },
+    ];
+  }
   return [];
 };
